@@ -13,9 +13,9 @@ def vulnerable_view(request):
 
 def insecure_query_view(request):
     user_input = request.GET.get('input', '')
-    query = f"SELECT * FROM main_examplemodel WHERE name = '{user_input}'"
+    query = "SELECT * FROM main_examplemodel WHERE name = %s"
     with connection.cursor() as cursor:
-        cursor.execute(query)
+        cursor.execute(query, [user_input])
         result = cursor.fetchone()
     return HttpResponse(f"Query Result: {result}")
 
