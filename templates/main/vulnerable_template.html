@@ -1,13 +1,12 @@
-<!-- main/templates/main/vulnerable_template.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vulnerable Template</title>
+    <title>Secure Template</title>
 </head>
 <body>
     <h1>User Input:</h1>
-    {{ user_input|safe }}
+    {{ user_input|escape }}
 </body>
 </html>
+
