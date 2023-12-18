@@ -7,6 +7,6 @@ I applied Cross-site scripting in  <!-- main/templates/main/vulnerable_template.
 wherer safe was replace by escape 
 <body>
     <h1>User Input:</h1>
-    {{ user_input|}}
+    {{ user_input|escape}}
 </body>
 
